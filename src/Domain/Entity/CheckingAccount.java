@@ -2,8 +2,8 @@ package Domain.Entity;
 
 public class CheckingAccount extends Account {
 
-    public CheckingAccount(int agency, int numbering) {
-        super(agency, numbering);
+    public CheckingAccount(Client client,int agency) {
+        super(client, agency);
     }
 
     @Override

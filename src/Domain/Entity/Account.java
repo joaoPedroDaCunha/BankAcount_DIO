@@ -2,19 +2,23 @@ package Domain.Entity;
 
 public abstract class Account {
 
-    private int Agency;
+    private int agency;
     private int numbering;
     private double balance;
+    private Client client;
 
-    public Account(int agency, int numbering) {
-        Agency = agency;
-        this.numbering = numbering;
+    private static int SEQUECIAL=1;
+    public Account(Client client ,int agency) {
+        this.client = client;
+        this.agency = agency;
+        this.numbering = SEQUECIAL;
+        SEQUECIAL++;
     }
 
     
 
     public int getAgency() {
-        return Agency;
+        return agency;
     }
 
 
