@@ -2,6 +2,7 @@ package Domain.Entity;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Bank {
     
@@ -29,6 +30,25 @@ public class Bank {
             }else{
                 throw new RuntimeException("Essa conta não existe");
             }
+        }else{
+            throw new RuntimeException("Não ha registros de contas");
+        }
+    }
+
+    public Set<Account> viewAccount(){
+        if(!listAccount.isEmpty()){
+            Set<Account> viewAccount = new TreeSet<>(listAccount);
+            return viewAccount;
+        }else{
+            throw new RuntimeException("Não ha registros de contas");
+        }
+    }
+
+    public Set<Client> viewClient(){
+        if(!listAccount.isEmpty()){
+            Set<Client> viewClient = new TreeSet<>();
+            listAccount.forEach(n ->{viewClient.add(n.getClient());});
+            return viewClient;
         }else{
             throw new RuntimeException("Não ha registros de contas");
         }

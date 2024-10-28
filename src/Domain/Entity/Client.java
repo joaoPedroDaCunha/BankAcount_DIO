@@ -1,6 +1,6 @@
 package Domain.Entity;
 
-public class Client {
+public class Client implements Comparable<Client>{
     
     private String name;
     private int cpf;
@@ -47,6 +47,11 @@ public class Client {
         if (cpf != other.cpf)
             return false;
         return true;
+    }
+
+    @Override
+    public int compareTo(Client o) {
+        return name.compareToIgnoreCase(o.getName());
     }
 
     

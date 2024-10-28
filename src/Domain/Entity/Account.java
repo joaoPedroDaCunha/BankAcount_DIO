@@ -35,6 +35,12 @@ public abstract class Account {
 
     
 
+    public Client getClient() {
+        return client;
+    }
+
+
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -57,6 +63,13 @@ public abstract class Account {
         if (numbering != other.numbering)
             return false;
         return true;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "agency=" + agency + ", numbering=" + numbering + ", balance=" + balance + ", client=" + client;
     }
 
 
