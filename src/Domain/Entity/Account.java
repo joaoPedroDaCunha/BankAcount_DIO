@@ -1,6 +1,6 @@
 package Domain.Entity;
 
-public class Account {
+public abstract class Account {
 
     private int Agency;
     private int numbering;
@@ -29,17 +29,43 @@ public class Account {
         return balance;
     }
 
+    
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + numbering;
+        return result;
+    }
 
 
-    public void getTheDrift(){
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Account other = (Account) obj;
+        if (numbering != other.numbering)
+            return false;
+        return true;
+    }
+
+
+
+    public void getTheDrift(double value){
 
     }
 
-    public void deposit(){
+    public void deposit(double value){
         
     }
 
-    public void trabsfer(){
+    public void transfer(double value, Account DestinationAccount){
 
     }
 }
