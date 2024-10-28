@@ -58,14 +58,25 @@ public abstract class Account {
 
 
     public void getTheDrift(double value){
-
+        this.balance -=value;
     }
 
     public void deposit(double value){
-        
+        this.balance += value;
     }
 
-    public void transfer(double value, Account DestinationAccount){
+    public void transfer(double value, Account destinationAccount){
+        getTheDrift(value);
+        destinationAccount.deposit(value);
 
     }
+
+    public abstract void printExtract();
+
+    protected void printCommonInformation() {
+        System.out.println(String.format("Agencia : %d",this.getAgency()));
+        System.out.println(String.format("Numero da Conta : %d", this.getNumbering()));
+        System.out.println(String.format("Saldo : %.2f",this.getBalance()));
+    }
+    
 }
