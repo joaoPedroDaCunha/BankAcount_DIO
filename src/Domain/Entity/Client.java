@@ -4,9 +4,6 @@ public class Client {
     
     private String name;
     private int cpf;
-    
-    public Client() {
-    }
 
     public Client(String name, int cpf) {
         this.name = name;
@@ -23,10 +20,6 @@ public class Client {
 
     public int getCpf() {
         return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
     }
 
     @Override
