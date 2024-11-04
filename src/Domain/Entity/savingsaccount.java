@@ -12,4 +12,8 @@ public class SavingsAccount extends Account{
         super.printCommonInformation();
     }
     
+    public void generateInterest(){
+        
+    }
+
 }
