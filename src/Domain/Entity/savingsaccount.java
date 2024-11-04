@@ -13,7 +13,7 @@ public class SavingsAccount extends Account{
     }
     
     public void generateInterest(){
-        
+        deposit(getBalance() * 0.04);
     }
 
 }
